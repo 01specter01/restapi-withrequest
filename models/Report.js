@@ -33,7 +33,7 @@ const schema = new mongoose.Schema({
 // Mongoose wird automatisch die passende Collection in unserer Datenbank erstellen.
 // Dafür ist der Name wichtig: Als Model schreiben wir ihn in der Einzahl und mit großen Anfangsbuchstaben.
 // Die Collection wird daraus abgeleitet und klein geschrieben als Mehrzahl benannt.
-const Report = mongoose.model("Report", schema); // Collection => reports
+const Report = mongoose.model("Customer", schema); // Collection => reports
 
 // Wir können das Model an dieser Stelle bereits exportieren.
 // Allerdings müssen wir dadurch wieder datenbankspezifische (oder "speziellere") Logik in den Controllern beachten.

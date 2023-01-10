@@ -8,7 +8,7 @@ dotenv.config();
 import "./lib/mongoose.js";
 
 import express from "express";
-import reportsRouter from "./routes/reports.js";
+import reportsRouter from "./routers/reports.js";
 const app = express();
 
 const port = process.env.PORT || 4000;
