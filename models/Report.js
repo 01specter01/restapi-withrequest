@@ -7,15 +7,27 @@ import mongoose from "mongoose";
 // Hier geben wir die Form vor, die durch Mongoose überwacht wird.
 // Eigenschaften wie "type", "required", "default" und "unique" können für die Beschreibung der einzelnen Properties verwendet werden.
 const schema = new mongoose.Schema({
-    title: {
+    firstname: {
         type: String,
         required: true,
     },
-    description: {
+    lastname: {
         type: String,
     },
-    test: {
+    business: {
         type: String,
+    
+    },
+    email: {
+        type: email,
+        required: true,
+    },
+    majorCustomer: {
+        type: Boolean,
+        default: "blubb",
+    },
+    totalSales: {
+        type: Number,
         default: "blubb",
     },
 });
