@@ -33,7 +33,7 @@ const schema = new mongoose.Schema({
 // Mongoose wird automatisch die passende Collection in unserer Datenbank erstellen.
 // Dafür ist der Name wichtig: Als Model schreiben wir ihn in der Einzahl und mit großen Anfangsbuchstaben.
 // Die Collection wird daraus abgeleitet und klein geschrieben als Mehrzahl benannt.
-const Report = mongoose.model("Customer", schema); // Collection => reports
+const Customer = mongoose.model("Customer", schema); // Collection => reports
 
 // Wir können das Model an dieser Stelle bereits exportieren.
 // Allerdings müssen wir dadurch wieder datenbankspezifische (oder "speziellere") Logik in den Controllern beachten.
@@ -45,8 +45,8 @@ const Report = mongoose.model("Customer", schema); // Collection => reports
 // Wir werden in Zukunft noch einen anderen Weg kennenlernen,
 // wie wir Methoden in Mongoose Models verwenden.
 export const getAll = async () => {
-    const reports = await Report.find();
-    return reports;
+    const customers = await Customer.find();
+    return customers;
 };
 
 export const create = async ({
@@ -59,7 +59,7 @@ export const create = async ({
 }) => {
     // Zum Erstellen eines neuen Datensatzes instanziieren wir ein neues Objekt des Models.
     // Im Constructor übergeben wir das zu erstellende Dokument.
-    const newReport = new Report({
+    const newCustomer = new Customer({
         firstname,
         lastname,
         business,
@@ -69,6 +69,6 @@ export const create = async ({
     });
 
     // Erst wenn wir save() ausführen, wird der Datensatz in der Collection gespeichert.
-    const result = await newReport.save();
+    const result = await newCustomer.save();
     return result;
 };

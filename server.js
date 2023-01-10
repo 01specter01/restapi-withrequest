@@ -8,7 +8,7 @@ dotenv.config();
 import "./lib/mongoose.js";
 
 import express from "express";
-import reportsRouter from "./routers/reports.js";
+import customerRouter from "./routers/customers.js";
 const app = express();
 
 const port = process.env.PORT || 4000;
@@ -18,4 +18,4 @@ import logMiddleware from "./middlewares/log.js";
 app.use(logMiddleware);
 
 app.use(express.json());
-app.use("/reports", reportsRouter);
+app.use("/customers", customerRouter);
