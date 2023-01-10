@@ -16,19 +16,16 @@ const schema = new mongoose.Schema({
     },
     business: {
         type: String,
-    
     },
     email: {
-        type: email,
+        type: String,
         required: true,
     },
     majorCustomer: {
         type: Boolean,
-        default: "blubb",
     },
     totalSales: {
         type: Number,
-        default: "blubb",
     },
 });
 
@@ -52,10 +49,24 @@ export const getAll = async () => {
     return reports;
 };
 
-export const create = async (title, description, test) => {
+export const create = async (
+    firstname,
+    lastname,
+    business,
+    email,
+    majorCustomer,
+    totalSales
+) => {
     // Zum Erstellen eines neuen Datensatzes instanziieren wir ein neues Objekt des Models.
     // Im Constructor übergeben wir das zu erstellende Dokument.
-    const newReport = new Report({ title, description, test });
+    const newReport = new Report({
+        firstname,
+        lastname,
+        business,
+        email,
+        majorCustomer,
+        totalSales,
+    });
 
     // Erst wenn wir save() ausführen, wird der Datensatz in der Collection gespeichert.
     const result = await newReport.save();

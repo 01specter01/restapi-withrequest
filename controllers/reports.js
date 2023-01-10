@@ -13,9 +13,12 @@ export const create = async (req, res) => {
     // Wir hatten im Model definiert, dass wir drei Argumente übergeben können,
     // Alternativ ist natürlich auch ein Objekt oder jede andere Form von Argumenten möglich.
     const result = await Report.create(
-        req.body.title,
-        req.body.description,
-        req.body.test
+        req.body.firstname,
+        req.body.lastname,
+        req.body.business,
+        req.body.email,
+        req.body.majorCustomer,
+        req.body.totalSales
     );
 
     res.status(201).json(result);
