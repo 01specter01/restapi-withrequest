@@ -12,14 +12,7 @@ export const create = async (req, res) => {
     // Dabei übergeben wir die relevanten Daten aus req.body an die Methode.
     // Wir hatten im Model definiert, dass wir drei Argumente übergeben können,
     // Alternativ ist natürlich auch ein Objekt oder jede andere Form von Argumenten möglich.
-    const result = await Report.create(
-        req.body.firstname,
-        req.body.lastname,
-        req.body.business,
-        req.body.email,
-        req.body.majorCustomer,
-        req.body.totalSales
-    );
+    const result = await Report.create(req.body);
 
     res.status(201).json(result);
 };

@@ -49,14 +49,14 @@ export const getAll = async () => {
     return reports;
 };
 
-export const create = async (
+export const create = async ({
     firstname,
     lastname,
     business,
     email,
     majorCustomer,
-    totalSales
-) => {
+    totalSales,
+}) => {
     // Zum Erstellen eines neuen Datensatzes instanziieren wir ein neues Objekt des Models.
     // Im Constructor übergeben wir das zu erstellende Dokument.
     const newReport = new Report({
