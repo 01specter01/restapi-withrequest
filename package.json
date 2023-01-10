@@ -1,0 +1,29 @@
+{
+  "name": "restapi-withrequest",
+  "version": "1.0.0",
+  "description": "```js Erstelle eine REST API mit Express und Mongoose, die es ermöglicht, einen neuen Kunden-Account anzulegen und alle Accounts auszulesen. Achte besonders auf eine saubere Struktur nach dem MVC-Pattern. Richte ein Model für Kunden-Accounts über Mongoose ein und nutze dieses für die beiden Endpoints. Mit dem Frontend-Team wurden folgende Endpoints besprochen: POST /customers Legt neuen Kunden-Account an. Übertragene Daten: -> Vorname -> Nachname -> Firmenname -> E-Mail-Adresse (eindeutig, benötigt) -> Großkunde (ja oder nein) -> Gesamtumsatz in € GET /customers Gibt alle Kunden-Accounts aus. ```",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/01specter01/restapi-withrequest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/01specter01/restapi-withrequest/issues"
+  },
+  "homepage": "https://github.com/01specter01/restapi-withrequest#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^4.13.0",
+    "mongoose": "^6.8.3",
+    "nodemon": "^2.0.20"
+  }
+}
